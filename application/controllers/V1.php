@@ -19,12 +19,11 @@ class V1 extends REST_Controller {
     public function order_post(){
         //Load Order_Model
         $this->load->model('order_model');
-        try {
-            $date = new DateTime($this->post('updatedAt'));
+        $date = $this->post('updatedAt');
+        if($date){
+            $date = new DateTime($date);
             $date->setTimezone( new DateTimeZone('Europe/Budapest'));
-        } catch (Exception $ex) {
-            $date = false;
-        }
+        }  
         
         $data = array(
             'shopId' => $this->post('shopId'),
@@ -41,13 +40,11 @@ class V1 extends REST_Controller {
         //Load Order_Model
         $this->load->model('order_model');
         
-        try {
-            $date = new DateTime($this->put('updatedAt'));
+        $date = $this->put('updatedAt');
+        if($date){
+            $date = new DateTime($date);
             $date->setTimezone( new DateTimeZone('Europe/Budapest'));
-
-        } catch (Exception $ex) {
-            $date = false;
-        }
+        }  
         
         $data = array(
             'shopId' => $this->put('shopId'),
