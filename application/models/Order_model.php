@@ -1,5 +1,4 @@
 <?php
-
 require_once APPPATH . "third_party/BaseModel.php";
 require_once APPPATH . "models/Entities/Order.php";
 /*
@@ -35,6 +34,7 @@ class Order_model extends BaseModel {
             try {
                 $order = new Order();
                 $order->setAttributes($data);
+
                 $this->o_doctrine->persist($order);
                 $this->o_doctrine->flush();
                 return array('code' => 201, 'data' => array('id' => $order->getId(), 'message' => 'Order created.'));

@@ -22,7 +22,7 @@ class V1 extends REST_Controller {
         $date = $this->post('updatedAt');
         if($date){
             $date = new DateTime($date);
-            $date->setTimezone( new DateTimeZone('Europe/Budapest'));
+            //$date->setTimezone( new DateTimeZone('Europe/Budapest'));
         }  
         
         $data = array(
@@ -43,7 +43,7 @@ class V1 extends REST_Controller {
         $date = $this->put('updatedAt');
         if($date){
             $date = new DateTime($date);
-            $date->setTimezone( new DateTimeZone('Europe/Budapest'));
+            //$date->setTimezone( new DateTimeZone('Europe/Budapest'));
         }  
         
         $data = array(
