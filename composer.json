@@ -1,0 +1,16 @@
+{
+	"description" : "RGB Test",
+	"name" : "RGB Test",
+	"require": {
+		"mobiledetect/mobiledetectlib": "^2.8",
+		"doctrine/orm": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "7"
+	},
+	"autoload": {
+        "classmap": [
+            "application/tests"
+        ]
+    }
+}

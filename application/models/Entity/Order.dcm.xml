@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="Order" table="orders">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+            <sequence-generator sequence-name="tablename_seq" allocation-size="100" initial-value="1" />
+        </id>
+        <field name="shopOrderId" column="shopOrderId" type="integer" nullable="true" />
+        <field name="shopId" column="shopId" type="string" length="200" nullable="true" />
+        <field name="updatedAt" column="updatedAt" type="datetime" nullable="true" />
+
+    </entity>
+</doctrine-mapping>
